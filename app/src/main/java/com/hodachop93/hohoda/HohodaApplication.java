@@ -2,6 +2,8 @@ package com.hodachop93.hohoda;
 
 import android.app.Application;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+
 /**
  * Created by Hop on 03/03/2016.
  */
@@ -16,5 +18,10 @@ public class HohodaApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/Roboto-Regular.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
     }
 }

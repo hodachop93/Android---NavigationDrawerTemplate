@@ -52,9 +52,13 @@ public class FragmentNavigationDrawer extends Fragment implements AdapterView.On
         mNavDrawerAdapter = new NavigationDrawerAdapter(getActivity());
         drawerList.setAdapter(mNavDrawerAdapter);
         drawerList.setOnItemClickListener(this);
-
-
         return layout;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     //Set up navigation drawer layout

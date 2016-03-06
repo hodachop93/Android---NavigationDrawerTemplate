@@ -79,7 +79,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
 
         viewHolder.title.setText(item.getTitle());
         viewHolder.icon.setImageResource(item.getIconResourceId());
-        viewHolder.divider.setVisibility(item.isShowDivider() ? View.VISIBLE : View.INVISIBLE);
+        viewHolder.divider.setVisibility(item.isShowDivider() ? View.VISIBLE : View.GONE);
     }
 
     private List<NavigationDrawerItem> createNavigationDrawerItems() {
@@ -89,7 +89,20 @@ public class NavigationDrawerAdapter extends BaseAdapter {
         items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_dashboard),
                 R.drawable.ic_nav_menu_item_dashboard, false));
         items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_notifications),
-                R.drawable.ic_nav_menu_item_notifications, false));
+                R.drawable.ic_nav_menu_item_notifications, true));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_browse_course),
+                R.drawable.ic_nav_menu_item_browse_course, false));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_browse_student),
+                R.drawable.ic_nav_menu_item_browse_student, false));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_my_course),
+                R.drawable.ic_nav_menu_item_my_course, false));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_post_course),
+                R.drawable.ic_nav_menu_item_post_course, true));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_setting),
+                R.drawable.ic_nav_menu_item_setting, false));
+        items.add(new NavigationDrawerItem(mContext.getString(R.string.nav_menu_item_sign_out),
+                R.drawable.ic_nav_menu_item_sign_out, false));
+
         return items;
     }
 

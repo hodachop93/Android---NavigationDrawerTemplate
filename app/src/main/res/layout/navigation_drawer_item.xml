@@ -6,13 +6,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/_16sdp">
 
         <ImageView
             android:id="@+id/nav_drawer_item_icon"
             android:layout_width="@dimen/nav_drawer_item_size"
             android:layout_height="@dimen/nav_drawer_item_size"
-            android:layout_margin="@dimen/nav_drawer_item_margin"
             android:src="@drawable/ic_nav_menu_item_dashboard" />
 
         <TextView
@@ -20,7 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_36sdp"
             android:text="Dashboard"
+            android:textAppearance="@style/TextAppearance.FontRobotoMedium"
             android:textSize="@dimen/font_size_normal"
             android:textStyle="bold" />
 
@@ -29,7 +31,9 @@
     <View
         android:id="@+id/nav_drawer_item_divider"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="1dp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
         android:layout_alignParentBottom="true"
         android:background="@color/colorDivider" />
 
