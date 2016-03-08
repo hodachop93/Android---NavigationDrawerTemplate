@@ -1,8 +1,10 @@
 package com.hodachop93.hohoda.api.usermanagement;
 
 import com.hodachop93.hohoda.api.ApiClient;
+import com.hodachop93.hohoda.model.HohodaResponse;
 import com.hodachop93.hohoda.model.Wallet;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -22,10 +24,14 @@ public class UserManagementApi {
     }
 
     public interface UserManagementApiInterface {
-        @POST("/user/registration")
-        void register(@Body RegisterRequestBody body, Callback<Wallet> callback);
-        @POST("/user/signin")
-        void signIn(@Body SignInRequestBody body, Callback<Wallet> callback);
+        @POST("user/registration123")
+        Call<HohodaResponse<Wallet>> register(@Body RegisterRequestBody body);
+
+        @POST("user/signin")
+        Call<HohodaResponse<Wallet>> signIn(@Body SignInRequestBody body);
+
+        @POST("user/activate")
+        Call<HohodaResponse<Wallet>> activate(@Body ActivationUserRequestBody body);
     }
 
 
