@@ -1,5 +1,7 @@
 package com.hodachop93.hohoda.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -21,6 +23,19 @@ public class SignInUpActivity extends BaseActivity implements ViewPager.OnPageCh
     ViewPager viewPager;
 
     private SignInUpPagerAdapter mAdapter;
+
+    /**
+     * get sign in or sign up intent
+     *
+     * @param context      current context
+     * @param showRegister true if it is register fragment
+     * @return the intent
+     */
+    public static Intent getIntent(Context context, boolean showRegister) {
+        Intent intent = new Intent(context, SignInUpActivity.class);
+        intent.putExtra("SHOW_REGISTER", showRegister);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
